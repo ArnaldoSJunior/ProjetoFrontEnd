@@ -1,0 +1,26 @@
+### GET
+GET http://localhost:5078/Departamentos
+
+### GET{ID}
+GET http://localhost:5078/Departamentos/1
+
+### POST /Departamentos
+POST http://localhost:5078/Departamentos
+Content-Type: application/json
+
+{
+  "nomeDepartamento": "Financeiro",
+  "descricao": "Possui 5 funcionários"
+}
+
+### PUT /Departamentos/id
+PUT http://localhost:5078/Departamentos/1
+Content-Type: application/json
+
+{
+  "nomeDepartamento": "RH",
+  "descricao": "Possui 1 funcionário"
+}
+
+### DELETE /departamentos/{id}
+DELETE http://localhost:5078/Departamentos/1

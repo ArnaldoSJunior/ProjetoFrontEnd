@@ -1,0 +1,32 @@
+GET http://localhost:5078/HistoricoSalarios
+
+###GET /HistoricoSalario/{id}
+GET http://localhost:5078/HistoricoSalarios/1
+
+###POST /HistoricoSalario
+POST http://localhost:5078/HistoricoSalarios
+Content-Type: application/json
+
+{
+  "funcionarioId": 1 ,
+  "dataAlteracao": "2024-11-06T00:00:00",
+  "salarioAntigo": 600 ,
+  "salarioNovo": 700 ,
+  "motivoAlteracao": "Vale Refeição"
+  
+}
+
+###PUT /HistoricoSalario/{id}
+PUT http://localhost:5078/HistoricoSalarios/1
+Content-Type: application/json
+
+{
+  "funcionarioId": 1 ,
+  "dataAlteracao": "2024-11-07T00:00:00",
+  "salarioAntigo": 700 ,
+  "salarioNovo": 800 ,
+  "motivoAlteracao": "Vale Refeição"
+}
+
+###DELETE /HistoricoSalario/{id}
+DELETE http://localhost:5078/HistoricoSalarios/1

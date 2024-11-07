@@ -1,0 +1,27 @@
+GET http://localhost:5078/Beneficios
+
+###GET /Beneficios/{id}
+GET http://localhost:5078/Beneficios/1
+
+###POST /Beneficios
+POST http://localhost:5078/Beneficios
+Content-Type: application/json
+
+{
+  "NomeBeneficio": "VR",
+  "Descricao": "Vale Refeição",
+  "Valor": 700
+}
+
+###PUT /Beneficios/{id}
+PUT http://localhost:5078/Beneficios/2
+Content-Type: application/json
+
+{
+  "NomeBeneficio": "VR",
+  "Descricao": "Vale Refeição",
+  "Valor": 800
+}
+
+###DELETE /Beneficios/{id}
+DELETE http://localhost:5078/Beneficios/1
