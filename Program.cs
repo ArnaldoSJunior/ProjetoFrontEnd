@@ -3,29 +3,30 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 
+builder.Services.AddDbContext<AppDataBase>(options =>
+    options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowLocalhost", policy =>
     {
-       
-        policy.WithOrigins("http://localhost:3000") 
+        policy.WithOrigins("http://localhost:3000")  // Permite acesso do frontend em http://localhost:3000
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
 });
-
-
-builder.Services.AddDbContext<AppDataBase>();
-
 
 var app = builder.Build();
 
 
 app.UseSwagger();
 app.UseSwaggerUI();
+
 
 app.MapGet("/", () => "API");
 
